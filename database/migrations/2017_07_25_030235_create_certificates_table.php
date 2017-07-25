@@ -15,7 +15,7 @@ class CreateCertificatesTable extends Migration {
 		Schema::create('certificates', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('time', 6)->comment('证书时间');
-			$table->string('xm', 20)->comment('姓名');
+			$table->string('xm', 50)->comment('姓名');
 			$table->string('xb', 2)->comment('性别');
 			$table->string('sfz', 18)->comment('身份证号');
 			$table->string('chn', 4)->comment('出生年');

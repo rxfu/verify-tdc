@@ -23,12 +23,12 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 	];
 });
 
-$factory->define(App\Certifcate::class, function (Faker\Generator $faker) {
+$factory->define(App\Certificate::class, function (Faker\Generator $faker) {
 	return [
 		'time'  => '201609',
 		'xm'    => $faker->name,
 		'xb'    => $faker->randomElement(['男', '女']),
-		'sfz'   => $faker->unique()->randomNumber(18),
+		'sfz'   => $faker->unique()->randomNumber(),
 		'chn'   => $faker->year(),
 		'chy'   => $faker->month(),
 		'gzdw'  => $faker->company(),

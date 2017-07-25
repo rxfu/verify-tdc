@@ -10,10 +10,8 @@ class CertificatesTableSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		DB::statement('TRUNCATE TABLE certificates CASCADE');
+		DB::statement('TRUNCATE TABLE certificates');
 
-		factory(App\Cetificate::class, 50)->create()->each(function ($c) {
-			$c->save();
-		});
+		factory(App\Certificate::class, 50)->create();
 	}
 }

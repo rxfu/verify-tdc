@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		DB::statement('TRUNCATE TABLE users CASCADE');
+		DB::statement('TRUNCATE TABLE users');
 
 		User::create([
 			'username' => 'admin',
