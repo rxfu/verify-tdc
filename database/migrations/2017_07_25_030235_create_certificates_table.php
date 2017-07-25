@@ -16,7 +16,7 @@ class CreateCertificatesTable extends Migration {
 			$table->string('time', 6)->comment('证书时间');
 			$table->string('xm', 50)->comment('姓名');
 			$table->string('xb', 2)->comment('性别');
-			$table->string('sfz', 18)->comment('身份证号');
+			$table->string('sfz', 18)->unique()->comment('身份证号');
 			$table->string('chn', 4)->comment('出生年');
 			$table->string('chy', 2)->comment('出生月');
 			$table->string('gzdw', 50)->comment('工作单位');
@@ -28,8 +28,7 @@ class CreateCertificatesTable extends Migration {
 
 			$table->primary('gpzh');
 
-			$table->unique(['time', 'sfz']);
-			$table->index(['gpzh', 'sfz']);
+			$table->index(['sfz']);
 		});
 	}
 
