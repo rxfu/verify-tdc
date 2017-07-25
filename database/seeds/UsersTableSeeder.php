@@ -14,7 +14,8 @@ class UsersTableSeeder extends Seeder {
 		DB::statement('TRUNCATE TABLE users CASCADE');
 
 		User::create([
-			'name'     => 'admin',
+			'username' => 'admin',
+			'name'     => '系统管理员',
 			'email'    => 'admin@gmail.com',
 			'password' => bcrypt('123456'),
 		]);
