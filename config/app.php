@@ -181,6 +181,7 @@ return [
 		 * Plugin Service Providers...
 		 */
 		Barryvdh\Debugbar\ServiceProvider::class,
+		Maatwebsite\Excel\ExcelServiceProvider::class,
 
 	],
 
@@ -235,6 +236,7 @@ return [
 		 * Plugin Facades...
 		 */
 		'Debugbar'     => Barryvdh\Debugbar\Facade::class,
+		'Excel'        => Maatwebsite\Excel\Facade\Excel::class,
 
 	],
 
