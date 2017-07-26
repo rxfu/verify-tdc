@@ -181,6 +181,7 @@ return [
 		 * Plugin Service Providers...
 		 */
 		Barryvdh\Debugbar\ServiceProvider::class,
+		Barryvdh\Snappy\ServiceProvider::class,
 		Maatwebsite\Excel\ExcelServiceProvider::class,
 
 	],
@@ -236,6 +237,8 @@ return [
 		 * Plugin Facades...
 		 */
 		'Debugbar'     => Barryvdh\Debugbar\Facade::class,
+		'PDF'          => Barryvdh\Snappy\Facades\SnappyPdf::class,
+		'SnappyImage'  => Barryvdh\Snappy\Facades\SnappyImage::class,
 		'Excel'        => Maatwebsite\Excel\Facade\Excel::class,
 
 	],
