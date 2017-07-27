@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => '登录'])
 
 @section('content')
 <div class="container">
