@@ -46,7 +46,9 @@ class CertificateController extends Controller {
 	}
 
 	public function report(Request $request) {
-		# code...
+		$certificate = Certificate::find($request->session()->get('cert_id'));
+
+		return view('certificate.pdf', compact('certificate'));
 	}
 
 }
