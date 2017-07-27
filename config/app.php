@@ -184,6 +184,7 @@ return [
 		Barryvdh\Snappy\ServiceProvider::class,
 		Maatwebsite\Excel\ExcelServiceProvider::class,
 		Yajra\Datatables\DatatablesServiceProvider::class,
+		SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
 	],
 
@@ -242,6 +243,7 @@ return [
 		'SnappyImage'  => Barryvdh\Snappy\Facades\SnappyImage::class,
 		'Excel'        => Maatwebsite\Excel\Facades\Excel::class,
 		'Datatables'   => Yajra\Datatables\Facades\Datatables::class,
+		'QrCode'       => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
 
 	],
 
