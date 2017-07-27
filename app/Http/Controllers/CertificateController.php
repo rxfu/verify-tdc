@@ -45,4 +45,8 @@ class CertificateController extends Controller {
 		return redirect()->route('query');
 	}
 
+	public function report(Request $request) {
+		# code...
+	}
+
 }

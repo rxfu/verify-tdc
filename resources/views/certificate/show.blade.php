@@ -29,6 +29,12 @@
                         <dt class="col-sm-4 text-right">高等学校教师职业道德修养</dt>
                         <dd class="col-sm-8">{{ $certificate->ddgb }}</dd>
                     </dl>
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-4">
+                            <a href="{{ route('report') }}" class="btn btn-primary" role="button">生成验证报告</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
