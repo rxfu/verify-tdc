@@ -24,3 +24,5 @@ Route::get('query', 'CertificateController@showQueryForm')->name('query');
 Route::post('query', 'CertificateController@query');
 Route::get('show', 'CertificateController@show')->name('certificate.show');
 Route::get('report', 'CertificateController@report')->name('report');
+Route::get('verify-form', 'CodeController@showVerifyForm')->name('verify-form');
+Route::get('verify', 'CodeController@verify')->name('verify');

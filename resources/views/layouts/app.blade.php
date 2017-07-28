@@ -45,6 +45,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
+                            <li><a href="{{ route('verify-form') }}">验证证书</a></li>
                             <li><a href="{{ route('query') }}">查询证书</a></li>
                             <li><a href="{{ route('login') }}">登录</a></li>
                         @else
