@@ -20,7 +20,7 @@
 	table th {
 		padding: 15px 8px;
 		text-align: right;
-		width: 200px;
+		width: 220px;
 	}
 	table td {
 		padding: 15px 8px;
@@ -69,7 +69,7 @@
 			<tr>
 				<th rowspan="3">二维码验证</th>
 				<td rowspan="3">
-					{!! QrCode::size(150)->margin(0)->generate('http://localhost/verify?code='.$code->code) !!}
+					{!! QrCode::size(120)->margin(0)->generate('http://localhost/verify?code='.$code->code) !!}
 				</td>
 				<th>条码验证</th>
 				<td>{{ number_format($code->code, 0, '.', ' ') }}</td>
