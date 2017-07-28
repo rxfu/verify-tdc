@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Certificate;
+use App\Code;
+use Carbon\Carbon;
+use Http\Helper;
 use Illuminate\Http\Request;
 
 class CertificateController extends Controller {
@@ -46,9 +49,27 @@ class CertificateController extends Controller {
 	}
 
 	public function report(Request $request) {
-		$certificate = Certificate::find($request->session()->get('cert_id'));
+		if ($request->session()->has('cert_id')) {
+			$certId = $request->session()->get('cert_id');
+			$exists = Code::whereCertId($certId)->exists();
 
-		return view('certificate.pdf', compact('certificate'));
+			if (!$exists) {
+				$code = new Code;
+
+				$code->cert_id    = $certId;
+				$code->code       = Helper::num_random(12);
+				$code->valid_date = Carbon::now()->addYear();
+
+				$code->save();
+			}
+
+			$certificate = Certificate::with('codes')->find($certId);
+			$code        = $certificate->codes->first();
+
+			return view('certificate.pdf', compact('certificate', 'code'));
+		}
+
+		return redirect()->route('query');
 	}
 
 }

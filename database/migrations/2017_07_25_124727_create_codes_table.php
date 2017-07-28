@@ -18,7 +18,7 @@ class CreateCodesTable extends Migration {
 			$table->string('code', 20)->comment('验证码');
 			$table->boolean('verified')->default(false)->comment('验证标志，0是未验证，1是已验证');
 			$table->timestamp('verified_at')->nullable()->comment('验证时间');
-			$table->date('valid_date')->comment('有效时间');
+			$table->date('valid_date')->nullable()->comment('有效时间');
 			$table->timestamps();
 
 			$table->foreign('cert_id')->references('gpzh')->on('certificates')->onDelete('cascade')->onUpdate('cascade');

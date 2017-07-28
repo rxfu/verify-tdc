@@ -68,17 +68,19 @@
 			</tr>
 			<tr>
 				<th rowspan="3">二维码验证</th>
-				<td rowspan="3"></td>
+				<td rowspan="3">
+					{!! QrCode::size(150)->margin(0)->generate('http://localhost/verify?code='.$code->code) !!}
+				</td>
 				<th>条码验证</th>
-				<td></td>
+				<td>{{ number_format($code->code, 0, '.', ' ') }}</td>
 			</tr>
 			<tr>
 				<th>生成日期</th>
-				<td></td>
+				<td>{{ $code->created_at->format('Y年m月d日') }}</td>
 			</tr>
 			<tr>
-				<th>验证日期</th>
-				<td></td>
+				<th>有效日期</th>
+				<td>{{ $code->valid_date->format('Y年m月d日') }}</td>
 			</tr>
 			<tr>
 				<td colspan="4">说明</td>
