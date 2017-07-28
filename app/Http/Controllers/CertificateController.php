@@ -7,6 +7,7 @@ use App\Code;
 use Carbon\Carbon;
 use Http\Helper;
 use Illuminate\Http\Request;
+use PDF;
 
 class CertificateController extends Controller {
 
@@ -66,7 +67,9 @@ class CertificateController extends Controller {
 			$certificate = Certificate::with('codes')->find($certId);
 			$code        = $certificate->codes->first();
 
-			return view('certificate.pdf', compact('certificate', 'code'));
+			$pdf = PDF::loadView('certificate.pdf', compact('certificate', 'code'))->setOption('encoding', 'utf-8');
+			return $pdf->download('report.pdf');
+			// return view('certificate.pdf', compact('certificate', 'code'));
 		}
 
 		return redirect()->route('query');
